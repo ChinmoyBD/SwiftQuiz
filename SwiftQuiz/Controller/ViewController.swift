@@ -30,10 +30,27 @@ class ViewController: UIViewController {
 
     //MARK:- Button Pressed
     @IBAction func answerButtonPressed(_ sender: UIButton) {
+        
+        let userAnswer = sender.currentTitle!
+        let userGortItRight = quizBrain.checkAnswer(userAnswer)
+        
+        if userGortItRight {
+            sender.backgroundColor = UIColor.green
+        } else {
+            sender.backgroundColor = UIColor.red
+        }
+        
+        quizBrain.nextQuestion()
+        
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) {_ in
+            self.updateUI()
+        }
+        
     }
     
     // UpdateUI
     func updateUI() {
+        buttonColorClear()
         let qNumber = quizBrain.getQuestionNumber()
         questionImaveView.image = quizBrain.getQuestionImg(qNumber)
         button1.setTitle(quizBrain.quize[qNumber].option[0], for: .normal)
@@ -42,6 +59,14 @@ class ViewController: UIViewController {
         button4.setTitle(quizBrain.quize[qNumber].option[3], for: .normal)
         
         scoreLabel.text = "Score: \(quizBrain.getScore())"
+        qaLabel.text = "QA: \(quizBrain.curentQuestionNumber())/\(quizBrain.quize.count)"
+    }
+    
+    func buttonColorClear() {
+        button1.backgroundColor = UIColor.clear
+        button2.backgroundColor = UIColor.clear
+        button3.backgroundColor = UIColor.clear
+        button4.backgroundColor = UIColor.clear
     }
     
 }

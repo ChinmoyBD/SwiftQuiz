@@ -111,8 +111,10 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="THm-EA-JIh" secondAttribute="trailing" constant="5" id="1Bn-kg-hni"/>
+                                    <constraint firstItem="tnv-4l-BeF" firstAttribute="top" secondItem="THm-EA-JIh" secondAttribute="bottom" constant="10" id="AY2-kx-CAZ"/>
                                     <constraint firstAttribute="trailing" secondItem="bpy-yg-YAc" secondAttribute="trailing" constant="13" id="BUM-6z-Gf8"/>
                                     <constraint firstItem="tnv-4l-BeF" firstAttribute="leading" secondItem="fs2-1i-Wj7" secondAttribute="leading" constant="30" id="DVc-ii-4cE"/>
+                                    <constraint firstItem="THm-EA-JIh" firstAttribute="top" secondItem="bpy-yg-YAc" secondAttribute="bottom" constant="10" id="ebz-6I-bQe"/>
                                     <constraint firstItem="THm-EA-JIh" firstAttribute="leading" secondItem="fs2-1i-Wj7" secondAttribute="leading" constant="5" id="oKF-HC-aXS"/>
                                     <constraint firstAttribute="trailing" secondItem="tnv-4l-BeF" secondAttribute="trailing" constant="30" id="xLl-Ov-Vrc"/>
                                     <constraint firstItem="bpy-yg-YAc" firstAttribute="leading" secondItem="fs2-1i-Wj7" secondAttribute="leading" constant="13" id="zI6-n9-dvq"/>

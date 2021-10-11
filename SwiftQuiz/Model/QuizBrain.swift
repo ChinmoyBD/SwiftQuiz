@@ -21,29 +21,55 @@ struct QuizBrain {
         Question(q: UIImage(named: "9")!, o: ["I'm called Serenity!", "Nothing will be output", "I'm called TARDIS!", "This code will not compile"], a: "I'm called TARDIS!"),
         Question(q: UIImage(named: "10")!, o: ["Serenity", "Serenity, Sulaco", "Sulaco", "Serenity, Sulaco, Enterprise"], a: "Serenity, Sulaco"),
         Question(q: UIImage(named: "11")!, o: ["Bow ties are cool", "Bow", "Neck ties are cool", "This code will not compile"], a: "Bow ties are cool"),
-        Question(q: UIImage(named: "12")!, o: ["5", "55", "50 ", "This code will not compile"], a: "55")
+        Question(q: UIImage(named: "12")!, o: ["5", "55", "50", "This code will not compile"], a: "55")
     ]
     
     var questionExist = [Int]()
     var score = 0
     var questionNumber = 0
+    var randomNumber: Int = 0
     
     // Select Random
-    func randeom(exist: [Int], n: Int) -> Int {
-        var r: Int
+    mutating func randeom(exist: [Int], n: Int) -> Int {
         repeat {
-            r = Int.random(in: 1...n)
-        } while(exist.contains(r))
+            randomNumber = Int.random(in: 1...n)
+        } while(exist.contains(randomNumber))
         
+        
+        return randomNumber
+    }
+    
+    mutating func getQuestionNumber() -> Int{
+        let r =  randeom(exist: questionExist, n: quize.count)
+        questionExist.append(r)
         return r
     }
     
-    func getQuestionNumber() -> Int{
-        return randeom(exist: questionExist, n: quize.count)
+    func getQuestionImg(_ imgNumber: Int) -> UIImage {
+        print(imgNumber)
+        return quize[imgNumber-1].question
     }
     
-    func getQuestionImg(_ imgNumber: Int) -> UIImage {
-        return quize[imgNumber].question
+    // Check Answer
+    mutating func checkAnswer(_ userAnswer: String) -> Bool {
+        if userAnswer == quize[randomNumber].answer {
+            print("Right")
+            score += 1
+            return true
+        } else {
+            print("Wrong!")
+            return false
+        }
+    }
+    
+    // Next Question
+    mutating func nextQuestion() {
+        if questionNumber + 1 < quize.count {
+            questionNumber += 1
+        } else {
+            questionNumber = 0
+            score = 0
+        }
     }
     
     // Score

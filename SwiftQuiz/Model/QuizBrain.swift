@@ -6,3 +6,23 @@
 //
 
 import Foundation
+import UIKit
+
+struct QuizBrain {
+    let quize = [
+        Question(q: UIImage(named: "1")!, o: ["Galactica", "Serenity", "Optional(Galatica)", "nil"], a: "Galactica"),
+        Question(q: UIImage(named: "2")!, o: ["-16,777,216", "-255", "16,777,216", "0"], a: "0"),
+        Question(q: UIImage(named: "3")!, o: ["1", "2", "3", "This code will not compile"], a: "This code will not compile"),
+        Question(q: UIImage(named: "4")!, o: ["Brought to you by Chris", "This code will not compile", "Brought to you by Joe", "This code will compile but crash"], a: "This code will not compile"),
+        Question(q: UIImage(named: "5")!, o: ["1, 2", "1, 2, 3", "2", "2, 3"], a: "1, 2, 3"),
+        Question(q: UIImage(named: "6")!, o: ["1000", "1000000", "1_000_000", "This code will not compile"], a: "1000"),
+        Question(q: UIImage(named: "7")!, o: ["2, 4, 8, 16, 32, 64", "2, 4, 8, 16, 32, 64, 128", "4, 8, 16, 32, 64", "This code will not compile"], a: "This code will not compile"),
+        Question(q: UIImage(named: "8")!, o: ["nil", "shiny", "0", "This code will not compile"], a: "shiny"),
+        Question(q: UIImage(named: "9")!, o: ["I'm called Serenity!", "Nothing will be output", "I'm called TARDIS!", "This code will not compile"], a: "I'm called TARDIS!"),
+        Question(q: UIImage(named: "10")!, o: ["Serenity", "Serenity, Sulaco", "Sulaco", "Serenity, Sulaco, Enterprise"], a: "Serenity, Sulaco"),
+        Question(q: UIImage(named: "11")!, o: ["Bow ties are cool", "Bow", "Neck ties are cool", "This code will not compile"], a: "Bow ties are cool"),
+        Question(q: UIImage(named: "12")!, o: ["5", "55", "50 ", "This code will not compile"], a: "55")
+    ]
+    
+    
+}

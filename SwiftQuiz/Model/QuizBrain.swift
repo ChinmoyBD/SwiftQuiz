@@ -32,7 +32,7 @@ struct QuizBrain {
     // Select Random
     mutating func randeom(exist: [Int], n: Int) -> Int {
         repeat {
-            randomNumber = Int.random(in: 1...n)
+            randomNumber = Int.random(in: 0..<n)
         } while(exist.contains(randomNumber))
         
         
@@ -69,6 +69,7 @@ struct QuizBrain {
         } else {
             questionNumber = 0
             score = 0
+            questionExist = []
         }
     }
     

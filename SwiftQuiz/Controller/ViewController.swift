@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     // From QuizBrain Struct
     var quizBrain = QuizBrain()
     
-    //MARK:- LifeCycle
+    
+    // MARK: - Default Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,14 +53,14 @@ class ViewController: UIViewController {
     func updateUI() {
         buttonColorClear()
         let qNumber = quizBrain.getQuestionNumber()
-        questionImaveView.image = quizBrain.getQuestionImg(qNumber)
+        questionImaveView.image = quizBrain.getQuestionImg(qNumber+1)
         button1.setTitle(quizBrain.quize[qNumber].option[0], for: .normal)
         button2.setTitle(quizBrain.quize[qNumber].option[1], for: .normal)
         button3.setTitle(quizBrain.quize[qNumber].option[2], for: .normal)
         button4.setTitle(quizBrain.quize[qNumber].option[3], for: .normal)
         
         scoreLabel.text = "Score: \(quizBrain.getScore())"
-        qaLabel.text = "QA: \(quizBrain.curentQuestionNumber())/\(quizBrain.quize.count)"
+        qaLabel.text = "QA: \(quizBrain.curentQuestionNumber() + 1)/\(quizBrain.quize.count)"
     }
     
     func buttonColorClear() {

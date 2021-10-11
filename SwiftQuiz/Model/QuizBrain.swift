@@ -24,5 +24,36 @@ struct QuizBrain {
         Question(q: UIImage(named: "12")!, o: ["5", "55", "50 ", "This code will not compile"], a: "55")
     ]
     
+    var questionExist = [Int]()
+    var score = 0
+    var questionNumber = 0
+    
+    // Select Random
+    func randeom(exist: [Int], n: Int) -> Int {
+        var r: Int
+        repeat {
+            r = Int.random(in: 1...n)
+        } while(exist.contains(r))
+        
+        return r
+    }
+    
+    func getQuestionNumber() -> Int{
+        return randeom(exist: questionExist, n: quize.count)
+    }
+    
+    func getQuestionImg(_ imgNumber: Int) -> UIImage {
+        return quize[imgNumber].question
+    }
+    
+    // Score
+    func getScore() -> Int {
+        return score
+    }
+    
+    // Question Number
+    func curentQuestionNumber() -> Int {
+        return questionNumber
+    }
     
 }

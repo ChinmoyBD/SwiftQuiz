@@ -35,7 +35,6 @@ struct QuizBrain {
             randomNumber = Int.random(in: 0..<n)
         } while(exist.contains(randomNumber))
         
-        
         return randomNumber
     }
     
@@ -81,6 +80,10 @@ struct QuizBrain {
     // Question Number
     func curentQuestionNumber() -> Int {
         return questionNumber
+    }
+    
+    func totalQuiz() -> Int {
+        return quize.count
     }
     
 }

@@ -15,15 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Swift-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="5Tc-i9-1UB">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Tc-i9-1UB">
+                                <rect key="frame" x="0.0" y="-4" width="414" height="903.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5Tc-i9-1UB" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="HZU-9O-zPv"/>
-                            <constraint firstAttribute="bottom" secondItem="5Tc-i9-1UB" secondAttribute="bottom" id="J7J-bf-kcD"/>
+                            <constraint firstItem="5Tc-i9-1UB" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-5" id="HZU-9O-zPv"/>
+                            <constraint firstAttribute="bottom" secondItem="5Tc-i9-1UB" secondAttribute="bottom" constant="-5" id="J7J-bf-kcD"/>
                             <constraint firstAttribute="trailing" secondItem="5Tc-i9-1UB" secondAttribute="trailing" id="MQq-US-9Uu"/>
                             <constraint firstItem="5Tc-i9-1UB" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="kYl-cT-2dI"/>
                         </constraints>
@@ -35,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Swift-Logo" width="1600" height="1000"/>
+        <image name="swift" catalog="system" width="128" height="106"/>
     </resources>
 </document>

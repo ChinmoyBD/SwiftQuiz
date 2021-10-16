@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
 
     //MARK:- Outlet
     @IBOutlet weak var scoreLabel: UILabel!
@@ -41,12 +41,27 @@ class ViewController: UIViewController {
             sender.backgroundColor = UIColor.red
         }
         
+        // GoToResultViewController
+        if quizBrain.curentQuestionNumber() + 1 == quizBrain.totalQuiz() {
+            self.performSegue(withIdentifier: "goToResults", sender: self)
+        }
+        
         quizBrain.nextQuestion()
         
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) {_ in
             self.updateUI()
         }
+    }
+    
+    //MARK: - SendToResultViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if segue.identifier == "goToResults" {
+            
+            let destinationVC = segue.destination as! ResultViewController
+            let parsentice =  100.00 * Float(quizBrain.getScore()) / Float(quizBrain.totalQuiz())
+            destinationVC.parsentice = parsentice
+        }
     }
     
     // UpdateUI
@@ -60,7 +75,7 @@ class ViewController: UIViewController {
         button4.setTitle(quizBrain.quize[qNumber].option[3], for: .normal)
         
         scoreLabel.text = "Score: \(quizBrain.getScore())"
-        qaLabel.text = "QA: \(quizBrain.curentQuestionNumber() + 1)/\(quizBrain.quize.count)"
+        qaLabel.text = "QA: \(quizBrain.curentQuestionNumber() + 1)/\(quizBrain.totalQuiz())"
     }
     
     func buttonColorClear() {
